@@ -3,6 +3,7 @@ package com.sprint.gina.menufuns1;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -41,8 +42,16 @@ public class MainActivity extends AppCompatActivity {
             case R.id.addMenuItem:
                 // task: start a second activity
                 Toast.makeText(this, "TODO: start second activity", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, AddItemActivity.class);
+                startActivity(intent);
                 return true; // this event has been consumed/handled
             // task: add remaining cases
+            case R.id.preferencesMenuItem:
+                Toast.makeText(this, "TODO: show preferences", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.aboutMenuItem:
+                Toast.makeText(this, "TODO: show about app", Toast.LENGTH_SHORT).show();
+                return true;
         }
         return super.onOptionsItemSelected(item);
     }
